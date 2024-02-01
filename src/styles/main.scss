@@ -1,0 +1,156 @@
+@use 'variables' as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var.$font-family;
+  background-color: var.$color-background;
+}
+
+.header {
+  background-color: var.$color-header-bg;
+  color: var.$color-header-text;
+  text-align: center;
+  padding: var.$spacing;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-top: var.$spacing;
+
+    &-link {
+      color: var.$color-header-text;
+      text-decoration: none;
+      margin: 0;
+      font-size: var.$text-size-header;
+      padding: calc(var.$spacing / 2);
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var.$color-header-text;
+        color: var.$color-header-bg;
+      }
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var.$spacing;
+}
+
+.main-content__image-container {
+  max-width: 50%;
+
+  .main-content__image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.main-content__description {
+  max-width: 40%;
+  text-align: justify;
+
+  .main-content__subtitle {
+    color: var.$color-text;
+    font-size: var.$text-size-section-title;
+    margin-bottom: calc(var.$spacing / 2);
+  }
+
+  .main-content__text {
+    color: var.$color-text-light;
+  }
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-around;
+  padding: var.$spacing;
+
+  &__block {
+    max-width: 40%;
+
+    &--color {
+      background-color: #e6e6e6;
+    }
+
+    .additional-info__subtitle {
+      color: var.$color-text;
+      font-size: var.$text-size-section-title;
+      margin-bottom: calc(var.$spacing / 2);
+    }
+
+    .additional-info__list {
+      list-style: none;
+      margin-bottom: var.$spacing;
+
+      .additional-info__item {
+        color: var.$color-text-light;
+        margin-bottom: calc(var.$spacing / 3);
+      }
+    }
+
+    .additional-info__text {
+      color: var.$color-text-light;
+
+      .additional-info__director,
+      .additional-info__release-date {
+        font-weight: bold;
+        color: var.$color-text;
+      }
+    }
+  }
+}
+
+.entrevistados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: var.$spacing;
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-size: var.$text-size-section-title;
+    font-weight: bold;
+    margin-bottom: var.$spacing;
+  }
+
+  .entrevistado {
+    margin-bottom: 40px;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    &__nome {
+      margin-top: calc(var.$spacing / 2);
+      text-align: center;
+      font-size: var.$text-size-title;
+      font-weight: bold;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  background-color: var.$color-footer-bg;
+  color: var.$color-footer-text;
+  padding: calc(var.$spacing / 2);
+
+  .footer__copyright {
+    font-size: var.$text-size-footer;
+  }
+}
